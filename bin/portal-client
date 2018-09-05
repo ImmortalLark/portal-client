@@ -1,0 +1,40 @@
+#!/usr/bin/env node
+
+const argv = require('yargs')
+    .option('rh', {
+        alias: 'remote-host',
+        describe: '远端服务域名',
+    })
+    .option('rp', {
+        alias: 'remote-port',
+        describe: '远端服务端口'
+    })
+    .option('lh', {
+        alias: 'local-host',
+        describe: '本地工程域名'
+    })
+    .options('lp', {
+        alias: 'local-port',
+        describe: '本地工程端口'
+    })
+    .option('s', {
+        alias: 'subdomain',
+        describe: '指定要连接的子域名',
+    })
+    .option('rcp', {
+        alias: 'remote-connect-port',
+        describe: '指定要连接的tcp端口',
+    })
+    .require('remote-host')
+    .help('help', 'Show this help and exit')
+    .version(require('../package').version)
+    .argv;
+const options = {
+    remoteHost: argv['remote-host'], // 远端服务地址
+    remotePort: argv['remote-port'], // 远端服务端口
+    subdomain: argv['subdomain'], // 指定的子域名
+    remoteConnectPort: argv['remote-connect-port'], // 指定的tcp连接端口
+    localHost: argv['local-host'], // 本地项目host
+    localPort: argv['local-port']// 本地项目端口
+};
+require('../app')(options);
