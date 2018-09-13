@@ -2,24 +2,26 @@
  * @Author: Feng fan
  * @Date: 2018-09-05 10:53:38
  * @Last Modified by: Feng fan
- * @Last Modified time: 2018-09-05 16:01:22
+ * @Last Modified time: 2018-09-13 16:01:07
  */
-const local = require('./lib/local');
-const remote = require('./lib/remote');
+const Portal = require('./bin/Portal');
 
 module.exports = ({
     remoteHost, // 远端服务地址
     remotePort = 80, // 远端服务端口
-    subdomain, // 指定的子域名
-    remoteConnectPort, // 指定的tcp连接端口
+    subdomain, // 指定的子域名,为空则随机分配
+    remoteConnectPort, // 指定的远端连接端口，为空则随机分配
     localHost = 'localhost', // 本地项目host
-    localPort = 80 // 本地项目端口
+    localPort = 80, // 本地项目端口
+    maxConnectionCount = 30 // 最大连接数
 }) => {
-    remote({
-        host: remoteHost, 
-        port: remotePort,
-        subdomain,
-        connectPort: remoteConnectPort,
-        local: local({ host: localHost, port: localPort })
+    const portal = new Portal({
+        remoteHost, 
+        remotePort, 
+        subdomain, 
+        remoteConnectPort, 
+        localHost,
+        localPort
     });
+    portal.init({ maxConnectionCount });
 }
