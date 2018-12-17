@@ -25,6 +25,10 @@ const argv = require('yargs')
         alias: 'remote-connect-port',
         describe: '指定要连接的tcp端口',
     })
+    .option('fb', {
+        alias: 'fallback',
+        describe: '备用请求地址'
+    })
     .require('remote-host')
     .help('help', 'Show this help and exit')
     .version(require('../package').version)
@@ -35,6 +39,7 @@ const options = {
     subdomain: argv['subdomain'], // 指定的子域名
     remoteConnectPort: argv['remote-connect-port'], // 指定的tcp连接端口
     localHost: argv['local-host'], // 本地项目host
-    localPort: argv['local-port']// 本地项目端口
+    localPort: argv['local-port'], // 本地项目端口
+    fallback: argv['fallback']
 };
 require('../app')(options);
