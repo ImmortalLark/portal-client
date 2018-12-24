@@ -1,0 +1,9 @@
+{
+  "remoteHost": "testcase.com",
+  "remotePort": 80,
+  "localHost": "localhost",
+  "localPort": 80,
+  "remoteConnectPort": 2000,
+  "fallback": "music.163.com",
+  "subdomain": "fan"
+}

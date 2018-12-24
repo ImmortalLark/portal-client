@@ -10,6 +10,9 @@
     "type": "git",
     "url": "https://g.hz.netease.com/NeteaseMusicUI/portal/client.git"
   },
+  "bin": {
+    "portal": "bin/portal-client"
+  },
   "author": "fengfan",
   "license": "ISC",
   "dependencies": {

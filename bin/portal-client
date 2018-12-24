@@ -1,6 +1,9 @@
 #!/usr/bin/env node
+const fs = require('fs');
 
-const argv = require('yargs')
+const configPath = `${process.cwd()}/portalconfig.json`;
+
+let argv = require('yargs')
     .option('rh', {
         alias: 'remote-host',
         describe: '远端服务域名',
@@ -29,17 +32,24 @@ const argv = require('yargs')
         alias: 'fallback',
         describe: '备用请求地址'
     })
-    .require('remote-host')
     .help('help', 'Show this help and exit')
-    .version(require('../package').version)
-    .argv;
+    .version(require('../package').version);
+
+let config = {};
+if (fs.existsSync(configPath)) {
+    config = JSON.parse(fs.readFileSync(configPath).toString('utf8'));
+} else {
+    argv = argv.require('remote-host').argv;
+}
+
 const options = {
-    remoteHost: argv['remote-host'], // 远端服务地址
-    remotePort: argv['remote-port'], // 远端服务端口
-    subdomain: argv['subdomain'], // 指定的子域名
-    remoteConnectPort: argv['remote-connect-port'], // 指定的tcp连接端口
-    localHost: argv['local-host'], // 本地项目host
-    localPort: argv['local-port'], // 本地项目端口
-    fallback: argv['fallback']
+    remoteHost: argv['remote-host'] || config.remoteHost, // 远端服务地址
+    remotePort: argv['remote-port'] || config.remotePort, // 远端服务端口
+    subdomain: argv['subdomain'] || config.subdomain, // 指定的子域名
+    remoteConnectPort: argv['remote-connect-port'] || config.remoteConnectPort, // 指定的tcp连接端口
+    localHost: argv['local-host'] || config.localHost, // 本地项目host
+    localPort: argv['local-port'] || config.localPort, // 本地项目端口
+    fallback: argv['fallback'] || config.fallback
 };
+
 require('../app')(options);
