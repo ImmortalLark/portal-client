@@ -3,10 +3,9 @@
   "remotePort": 80,
   "localHost": "localhost",
   "localPort": 9527,
-  "remoteConnectPort": 2000,
+  "remoteConnectPort": 80,
   "fallback": {
-    "/m": "music.163.com",
-    "/weapi": "music.163.com"
+    "/m": "music.163.com"
   },
   "subdomain": "fan"
 }
