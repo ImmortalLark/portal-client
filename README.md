@@ -14,7 +14,11 @@ portal --rh [domain]
 ```js
 portal
 ```
+
 ### 启动参数
+
+启动参数的优先级高于配置文件同名参数
+
 ```js
   Options:
   --rh, --remote-host           远端服务域名                            [required]
