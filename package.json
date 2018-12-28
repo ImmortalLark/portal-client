@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "@music/portal-client",
   "version": "1.0.0",
   "description": "portal客户端，负责连接远程服务与本地项目",
   "main": "app.js",

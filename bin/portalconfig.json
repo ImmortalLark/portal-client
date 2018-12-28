@@ -1,5 +1,5 @@
 {
-  "remoteHost": "testcase.com",
+  "remoteHost": "portal.qa.igame.163.com",
   "remotePort": 80,
   "localHost": "localhost",
   "localPort": 9527,
