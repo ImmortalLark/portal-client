@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "@music/portal-client",
   "version": "1.0.0",
   "description": "portal客户端，负责连接远程服务与本地项目",
   "main": "app.js",
@@ -10,6 +10,16 @@
     "type": "git",
     "url": "https://g.hz.netease.com/NeteaseMusicUI/portal/client.git"
   },
+  "bin": {
+    "portal": "bin/portal-client"
+  },
   "author": "fengfan",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "log4js": "^3.0.6",
+    "querystring": "^0.2.0",
+    "socket.io-client": "1.7.4",
+    "yargs": "^12.0.1"
+  }
 }
