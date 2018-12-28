@@ -39,8 +39,9 @@ let config = {};
 if (fs.existsSync(configPath)) {
     config = JSON.parse(fs.readFileSync(configPath).toString('utf8'));
 } else {
-    argv = argv.require('remote-host').argv;
+    argv = argv.require('remote-host');
 }
+argv = argv.argv
 
 const options = {
     remoteHost: argv['remote-host'] || config.remoteHost, // 远端服务地址
