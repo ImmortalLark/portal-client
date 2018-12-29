@@ -1,12 +1,17 @@
 ## portal-client
 portal客户端，负责连接远程服务与本地项目
 
+### 项目架构
+![portal](https://p1.music.126.net/IXF1NONMG2HBxEPQma__NQ==/109951163753411807.png)
+
+[查看portal-server点这里](https://g.hz.netease.com/NeteaseMusicUI/portal/server)
+
 ## 安装
 ```js
   nenpm i -g @music/portal-client
 ```
 
-### 启动
+## 启动
 ```js
 portal --rh [domain]
 ```
@@ -15,7 +20,7 @@ portal --rh [domain]
 portal
 ```
 
-### 启动参数
+## 启动参数
 
 启动参数的优先级高于配置文件同名参数
 
@@ -31,7 +36,7 @@ portal
   --version                     Show version number                    [boolean]
 ```
 
-### 配置文件 
+## 配置文件 
 命名为portalconfig.json（在配置文件所在目录执行启动命令）
 ```json
 {
