@@ -2,10 +2,13 @@
   "remoteHost": "portal.qa.igame.163.com",
   "remotePort": 80,
   "localHost": "localhost",
-  "localPort": 9527,
+  "localPort": 80,
   "remoteConnectPort": 80,
   "fallback": {
-    "/m": "music.163.com"
+    "/api/rep2": {
+      "host": "qa-uuu.igame.163.com",
+      "force": true
+    }
   },
   "subdomain": "fan"
 }

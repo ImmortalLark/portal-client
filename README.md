@@ -47,8 +47,13 @@ portal
   "localPort": 9527,
   "remoteConnectPort": 80,
   "fallback": {
-    "/m": "music.163.com",
-    "/api/xx": "music.163.com:1000"
+    "/api/rep2": {
+      "host": "qa-uuu.igame.163.com",
+      "force": true // 强制fallback开关，可直接将请求代理到指定地址
+    },
+    "/m": {
+      "host": "music.163.com"
+    }
   },
   "subdomain": "sub"
 }
