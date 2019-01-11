@@ -13,7 +13,7 @@ portal客户端，负责连接远程服务与本地项目
 
 ## 启动
 ```js
-portal --rh [domain]
+portal -- --rh [domain]
 ```
 如果有配置文件的话也可以直接在工程目录下这样启动
 ```js
@@ -31,6 +31,7 @@ portal
   --lh, --local-host            本地工程域名
   --lp, --local-port            本地工程端口
   -s, --subdomain               指定要连接的子域名
+  --fb, --fallback              备用请求地址
   --rcp, --remote-connect-port  指定要连接的tcp端口
   --help                        Show this help and exit                [boolean]
   --version                     Show version number                    [boolean]
@@ -47,7 +48,7 @@ portal
   "remoteConnectPort": 80,
   "fallback": {
     "/m": "music.163.com",
-    "/api/xx": "music.163.com"
+    "/api/xx": "music.163.com:1000"
   },
   "subdomain": "sub"
 }
