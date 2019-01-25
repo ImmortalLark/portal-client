@@ -49,7 +49,10 @@ portal
   "fallback": {
     "/api/rep2": {
       "host": "qa-uuu.igame.163.com:80", // 可配置端口
-      "force": true // 强制fallback开关，可直接将请求代理到指定地址
+      "force": true, // 强制fallback开关，可直接将请求代理到指定地址
+      "headers": { // 可替换需要配置的请求头
+        "x-from-isp": "1"
+      }
     },
     "/m": {
       "host": "music.163.com"

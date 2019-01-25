@@ -2,12 +2,15 @@
   "remoteHost": "portal.qa.igame.163.com",
   "remotePort": 80,
   "localHost": "localhost",
-  "localPort": 80,
+  "localPort": 3000,
   "remoteConnectPort": 80,
   "fallback": {
-    "/api/rep2": {
-      "host": "qa-uuu.igame.163.com",
-      "force": true
+    "/rep2/api": {
+      "host": "cms.qa-hot.igame.163.com",
+      "force": true,
+      "headers": {
+        "x-from-isp": "1"
+      }
     }
   },
   "subdomain": "fan"
