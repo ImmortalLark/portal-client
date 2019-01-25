@@ -1,21 +1,26 @@
 ## portal-client
 portal客户端，负责连接远程服务与本地项目
 
+### 项目架构
+![portal](https://p1.music.126.net/IXF1NONMG2HBxEPQma__NQ==/109951163753411807.png)
+
+[查看portal-server点这里](https://g.hz.netease.com/NeteaseMusicUI/portal/server)
+
 ## 安装
 ```js
   nenpm i -g @music/portal-client
 ```
 
-### 启动
+## 启动
 ```js
-portal --rh [domain]
+portal -- --rh [domain]
 ```
 如果有配置文件的话也可以直接在工程目录下这样启动
 ```js
 portal
 ```
 
-### 启动参数
+## 启动参数
 
 启动参数的优先级高于配置文件同名参数
 
@@ -26,12 +31,13 @@ portal
   --lh, --local-host            本地工程域名
   --lp, --local-port            本地工程端口
   -s, --subdomain               指定要连接的子域名
+  --fb, --fallback              备用请求地址
   --rcp, --remote-connect-port  指定要连接的tcp端口
   --help                        Show this help and exit                [boolean]
   --version                     Show version number                    [boolean]
 ```
 
-### 配置文件 
+## 配置文件 
 命名为portalconfig.json（在配置文件所在目录执行启动命令）
 ```json
 {
@@ -41,8 +47,16 @@ portal
   "localPort": 9527,
   "remoteConnectPort": 80,
   "fallback": {
-    "/m": "music.163.com",
-    "/api/xx": "music.163.com"
+    "/api/rep2": {
+      "host": "qa-uuu.igame.163.com:80", // 可配置端口
+      "force": true, // 强制fallback开关，可直接将请求代理到指定地址
+      "headers": { // 可替换需要配置的请求头
+        "x-from-isp": "1"
+      }
+    },
+    "/m": {
+      "host": "music.163.com"
+    }
   },
   "subdomain": "sub"
 }
