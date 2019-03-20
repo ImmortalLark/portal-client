@@ -1,5 +1,5 @@
 {
-  "name": "@music/portal-client",
+  "name": "portal-cli",
   "version": "1.0.2",
   "description": "portal客户端，负责连接远程服务与本地项目",
   "main": "app.js",
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://g.hz.netease.com/NeteaseMusicUI/portal/client.git"
+    "url": "https://github.com/ImmortalLark/portal-server.git"
   },
   "bin": {
     "portal": "bin/portal-client"
   },
-  "author": "fengfan",
+  "author": "ImmortalLark",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",

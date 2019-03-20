@@ -4,11 +4,11 @@ portal客户端，负责连接远程服务与本地项目
 ### 项目架构
 ![portal](https://p1.music.126.net/IXF1NONMG2HBxEPQma__NQ==/109951163753411807.png)
 
-[查看portal-server点这里](https://g.hz.netease.com/NeteaseMusicUI/portal/server)
+[查看portal-server点这里](https://github.com/ImmortalLark/portal-server)
 
 ## 安装
 ```js
-  nenpm i -g @music/portal-client
+  nenpm i -g portal-cli
 ```
 
 ## 启动
@@ -41,21 +41,21 @@ portal
 命名为portalconfig.json（在配置文件所在目录执行启动命令）
 ```json
 {
-  "remoteHost": "portal.qa.igame.163.com",
+  "remoteHost": "xx.yy.com",
   "remotePort": 80,
   "localHost": "localhost",
   "localPort": 9527,
   "remoteConnectPort": 80,
   "fallback": {
-    "/api/rep2": {
-      "host": "qa-uuu.igame.163.com:80", // 可配置端口
+    "/api": {
+      "host": "xx.yy.com:80", // 可配置端口
       "force": true, // 强制fallback开关，可直接将请求代理到指定地址
       "headers": { // 可替换需要配置的请求头
         "x-from-isp": "1"
       }
     },
     "/m": {
-      "host": "music.163.com"
+      "host": "xx.yy.com"
     }
   },
   "subdomain": "sub"
