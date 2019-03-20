@@ -1,5 +1,5 @@
 {
-  "name": "portal-cli",
+  "name": "lark-portal-cli",
   "version": "1.0.2",
   "description": "portal客户端，负责连接远程服务与本地项目",
   "main": "app.js",
