@@ -47,7 +47,7 @@ const options = {
     remoteHost: argv['remote-host'] || config.remoteHost, // 远端服务地址
     remotePort: argv['remote-port'] || config.remotePort, // 远端服务端口
     subdomain: argv['subdomain'] || config.subdomain, // 指定的子域名
-    remoteConnectPort: argv['remote-connect-port'] || config.remoteConnectPort, // 指定的tcp连接端口
+    remoteConnectPort: argv['remote-connect-port'] || config.remoteConnectPort || 80, // 指定的websocket连接端口
     localHost: argv['local-host'] || config.localHost, // 本地项目host
     localPort: argv['local-port'] || config.localPort, // 本地项目端口
     fallback: argv['fallback'] || config.fallback
