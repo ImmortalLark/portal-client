@@ -8,7 +8,7 @@ portal客户端，负责连接远程服务与本地项目
 
 ## 安装
 ```js
-  nenpm i -g lark-portal-cli
+npm i -g lark-portal-cli
 ```
 
 ## 启动
